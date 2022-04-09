@@ -6,13 +6,27 @@ const productSchema = new Schema({
         required: true,
         unique: true
     },
+    desc:{
+        type: String,
+        required: true
+    },
     price: {
         type: Number,
         required: true
     },
     category: {
-        type: ObjectId,
-        ref: "Category"
+        // type: ObjectId,
+        // ref: "Category"
+        type: String,
+        required: true
+    },
+    image: {
+        type: String,
+       
+    },
+    status: {
+        type: Number,
+       
     }
 }, { timestamps: true});
 export default mongoose.model('Product', productSchema);
